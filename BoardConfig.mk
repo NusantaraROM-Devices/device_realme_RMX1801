@@ -54,6 +54,8 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE)
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 # TARGET_KERNEL_CLANG_COMPILE := true
+KERNEL_TOOLCHAIN := $(OUT_DIR)/../prebuilts/gcc/$(HOST_OS)-x86/aarch64/linaro-6.5.0/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 TARGET_KERNEL_SOURCE := kernel/realme/sdm660
 TARGET_KERNEL_CONFIG := sdm660-perf_defconfig
 
