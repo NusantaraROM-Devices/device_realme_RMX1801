@@ -97,13 +97,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-  endif
-endif
-
 # Display
 TARGET_SCREEN_DENSITY := 480
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
