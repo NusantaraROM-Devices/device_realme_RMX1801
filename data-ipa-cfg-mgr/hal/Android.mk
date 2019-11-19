@@ -14,7 +14,6 @@ LOCAL_MODULE := liboffloadhal
 #LOCAL_CPP_FLAGS := -Wall -Werror
 LOCAL_SHARED_LIBRARIES := libhidlbase \
                         liblog \
-                        libcutils \
                         libdl \
                         libbase \
                         libutils \
