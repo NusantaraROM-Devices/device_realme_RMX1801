@@ -355,6 +355,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Parts
+PRODUCT_PACKAGES += \
+    RealmeParts
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
