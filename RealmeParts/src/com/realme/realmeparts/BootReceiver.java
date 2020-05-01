@@ -22,8 +22,12 @@ import android.content.Intent;
 import android.provider.Settings;
 
 import com.realme.realmeparts.kcal.Utils;
+import com.realme.realmeparts.preferences.SecureSettingCustomSeekBarPreference;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
+
+    private final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
+    private final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
     public void onReceive(Context context, Intent intent) {
 
@@ -52,5 +56,12 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
         }
+
+        int gain = Settings.Secure.getInt(context.getContentResolver(),
+                RealmeParts.PREF_HEADPHONE_GAIN, 4);
+        FileUtils.setValue(HEADPHONE_GAIN_PATH, gain + " " + gain);
+        FileUtils.setValue(MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                RealmeParts.PREF_MICROPHONE_GAIN, 0));
+
     }
 }

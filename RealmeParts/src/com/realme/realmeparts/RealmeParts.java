@@ -41,6 +41,7 @@ import android.util.Log;
 
 import com.realme.realmeparts.kcal.KCalSettingsActivity;
 import com.realme.realmeparts.Constants;
+import com.realme.realmeparts.preferences.SecureSettingCustomSeekBarPreference;
 
 public class RealmeParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -49,8 +50,16 @@ public class RealmeParts extends PreferenceFragment
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
 
+    final static String PREF_HEADPHONE_GAIN = "headphone_gain";
+    private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
+    final static String PREF_MICROPHONE_GAIN = "microphone_gain";
+    private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
+
     private Preference mKcal;
     private VibratorStrengthPreference mVibratorStrength;
+    private static Context mContext;
+    private SecureSettingCustomSeekBarPreference mHeadphoneGain;
+    private SecureSettingCustomSeekBarPreference mMicrophoneGain;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -68,11 +77,23 @@ public class RealmeParts extends PreferenceFragment
             startActivity(intent);
             return true;
         });
+
+        mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        mHeadphoneGain.setOnPreferenceChangeListener(this);
+
+        mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
+        mMicrophoneGain.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+        if (preference == mHeadphoneGain) {
+            FileUtils.setValue(HEADPHONE_GAIN_PATH, newValue + " " + newValue);
+        } else if(preference == mMicrophoneGain){
+            FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) newValue);
+        } else {
+            Constants.setPreferenceInt(getContext(), preference.getKey(), Integer.parseInt((String) newValue));
+        }
         return true;
     }
 

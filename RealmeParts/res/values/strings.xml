@@ -74,4 +74,8 @@
     <string name="specturm_qs_prompt_title">A QS title is available now.</string>
     <string name="specturm_qs_prompt_text">You can switch the kernel profile more quickly and easily by adding the spectrum tile to QS settings.</string>
 
+    <string name="category_sound">Sound</string>
+    <string name="headphone_gain">Headphone Gain</string>
+    <string name="microphone_gain">Microphone Gain</string>
+
 </resources>
