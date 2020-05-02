@@ -25,8 +25,8 @@ import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import android.support.v7.preference.ListPreference;
-import android.support.v7.preference.Preference;
+import androidx.preference.Preference;
+import androidx.preference.ListPreference;
 
 import com.realme.realmeparts.R;
 import com.realme.realmeparts.SpectrumTileService;

@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import android.support.v7.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 
 import static com.realme.realmeparts.preference.SpectrumPreference.FEATURE;
 import static com.realme.realmeparts.preference.SpectrumPreference.SPECTRUM_PREFERENCE_ADD_QS_TILE;
