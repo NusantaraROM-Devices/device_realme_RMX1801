@@ -40,3 +40,7 @@ on boot
     #Preset touchpanel tuner nodes
     write /proc/touchpanel/oppo_tp_limit_enable 0
     write /proc/touchpanel/oppo_tp_direction 1
+
+    # Allow system to read measured screen FPS
+    chown system graphics /sys/devices/virtual/graphics/fb0/measured_fps
+    chmod 0660 /sys/devices/virtual/graphics/fb0/measured_fps
