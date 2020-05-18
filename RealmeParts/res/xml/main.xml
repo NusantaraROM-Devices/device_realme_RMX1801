@@ -21,7 +21,8 @@
             android:key="kcal"
             android:title="@string/display_color_calibration"
             android:summary="@string/set_color_using_kcal"
-            android:persistent="false" >
+            android:persistent="false"
+            android:icon="@drawable/ic_kcal" >
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.realme.realmeparts.kcal.KCalSettingsActivity"
@@ -41,7 +42,8 @@
             android:entryValues="@array/spectrum_values"
             android:key="spectrum"
             android:summary="@string/spectrum_summary"
-            android:title="@string/spectrum_title" />
+            android:title="@string/spectrum_title"
+            android:icon="@drawable/ic_spectrum" />
 
     </PreferenceCategory>
 
@@ -52,14 +54,16 @@
             android:key="headphone_gain"
             android:max="20"
             app:min="-40"
-            android:title="@string/headphone_gain" />
+            android:title="@string/headphone_gain"
+            android:icon="@drawable/ic_headphone" />
 
         <com.realme.realmeparts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="0"
             android:key="microphone_gain"
             android:max="20"
             app:min="-10"
-            android:title="@string/microphone_gain" />
+            android:title="@string/microphone_gain"
+            android:icon="@drawable/ic_microphone" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -67,7 +71,8 @@
         <com.realme.realmeparts.VibratorStrengthPreference
             android:key="vib_strength"
             android:title="@string/vib_strength_title_head"
-            android:summary="@string/vib_strength_summary_head" />
+            android:summary="@string/vib_strength_summary_head"
+            android:icon="@drawable/ic_vibrator" />
     </PreferenceCategory>
 
 </PreferenceScreen>
