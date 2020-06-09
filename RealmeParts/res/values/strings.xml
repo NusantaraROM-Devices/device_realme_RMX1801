@@ -78,15 +78,6 @@
 
     <string name="app_confirm">OK</string>
     <string name="performance">Performance</string>
-    <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">Kernel Profiles</string>
-    <string name="spectrum_title">Kernel Profile</string>
-    <string name="spectrum_summary">Choose your kernel profile</string>
-    <string name="spectrum_dialogTitle">Choose your kernel profile</string>
-    
-    <!-- Spectrum QS tile -->
-    <string name="specturm_qs_prompt_title">A QS title is available now.</string>
-    <string name="specturm_qs_prompt_text">You can switch the kernel profile more quickly and easily by adding the spectrum tile to QS settings.</string>
 
     <string name="category_sound">Sound</string>
     <string name="headphone_gain">Headphone Gain</string>
