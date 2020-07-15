@@ -50,6 +50,7 @@ public class RealmeParts extends PreferenceFragment
     private static final String PREF_DEVICE_KCAL = "kcal";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
+    public static final String KEY_OTG_SWITCH = "otg";
 
     final static String PREF_HEADPHONE_GAIN = "headphone_gain";
     private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
@@ -61,6 +62,8 @@ public class RealmeParts extends PreferenceFragment
     private static Context mContext;
     private SecureSettingCustomSeekBarPreference mHeadphoneGain;
     private SecureSettingCustomSeekBarPreference mMicrophoneGain;
+
+    private static TwoStatePreference mOTGModeSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -84,6 +87,11 @@ public class RealmeParts extends PreferenceFragment
 
         mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
         mMicrophoneGain.setOnPreferenceChangeListener(this);
+
+        mOTGModeSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
+        mOTGModeSwitch.setEnabled(OTGModeSwitch.isSupported());
+        mOTGModeSwitch.setChecked(OTGModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mOTGModeSwitch.setOnPreferenceChangeListener(new OTGModeSwitch());
     }
 
     @Override
