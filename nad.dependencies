@@ -10,5 +10,11 @@
     "repository": "NusantaraROM-Devices/proprietary_vendor_realme",
     "target_path": "vendor/realme",
     "branch": "ten"
+  },
+  {
+    "remote": "priv",
+    "repository": "android_packages_apps_NusantaraPapers",
+    "target_path": "packages/apps/NusantaraPapers",
+    "branch": "10"
   }
 ]
