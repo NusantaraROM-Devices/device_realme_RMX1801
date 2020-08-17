@@ -10,5 +10,11 @@
     "repository": "RMX1801/proprietary_vendor_realme",
     "target_path": "vendor/realme",
     "branch": "10.x"
+  },
+  {
+    "remote": "priv",
+    "repository": "android_packages_apps_NusantaraPapers",
+    "target_path": "packages/apps/NusantaraPapers",
+    "branch": "10"
   }
 ]

@@ -314,6 +314,10 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
+# NusantaraPapers
+PRODUCT_PACKAGES += \
+    NusantaraPapers
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
