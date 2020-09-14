@@ -3,18 +3,21 @@
     "remote": "github",
     "repository": "dodyirawan85/android_kernel_realme_sdm660",
     "target_path": "kernel/realme/sdm660",
-    "branch": "lineage-17.1"
+    "branch": "lineage-17.1",
+    "clone-depth": "1"
   },
   {
     "remote": "ghpriv",
     "repository": "NusantaraROM-Devices/proprietary_vendor_realme",
     "target_path": "vendor/realme",
-    "branch": "ten"
+    "branch": "ten",
+    "clone-depth": "1"
   },
   {
     "remote": "priv",
     "repository": "android_packages_apps_NusantaraPapers",
     "target_path": "packages/apps/NusantaraPapers",
-    "branch": "10"
+    "branch": "10",
+    "clone-depth": "1"
   }
 ]
