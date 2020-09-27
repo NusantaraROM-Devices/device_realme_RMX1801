@@ -77,4 +77,6 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}
         "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml" \
         "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml"
 
+"${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/lib64/libdpmframework.so"
+
 "${MY_DIR}/setup-makefiles.sh"
