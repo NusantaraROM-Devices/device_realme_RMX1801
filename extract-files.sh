@@ -65,12 +65,6 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${NAD_ROOT}" false "${CLEAN_VENDOR}"
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
 # Fix proprietary blobs
-patchelf --replace-needed "libcutils.so" "libcutils-v29.so" \
-        "${NAD_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/lib64/libdpmframework.so"
-
-patchelf --add-needed "libcutils.so" \
-        "${NAD_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/lib64/libdpmframework.so"
-
 sed -i 's/xml version="2.0"/xml version="1.0"/g' \
         "${NAD_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml" \
         "${NAD_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml"
