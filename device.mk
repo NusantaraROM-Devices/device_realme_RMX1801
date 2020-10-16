@@ -162,7 +162,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
     libstdc++.vendor \
-    Snap \
     vendor.qti.hardware.camera.device@1.0
 
 # Charger
@@ -214,6 +213,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor
+
+# Prebuilt App
+PRODUCT_PACKAGES += \
+    GCam
 
 # GPS
 PRODUCT_PACKAGES += \
