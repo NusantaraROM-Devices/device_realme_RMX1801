@@ -214,7 +214,11 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt App
 PRODUCT_PACKAGES += \
-    GCam
+    Calculator \
+    Clock \
+    GCam \
+    RetroMusic \
+    ViaBrowser
 
 # GPS
 PRODUCT_PACKAGES += \
