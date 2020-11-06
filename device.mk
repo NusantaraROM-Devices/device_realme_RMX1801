@@ -147,7 +147,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.bluetooth.default \
     libbluetooth_audio_session \
-    libbthost_if
+    libbthost_if \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Bluetooth component overrides
 PRODUCT_COPY_FILES += \
@@ -416,14 +417,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.realme_sdm660
 
 # USB
 PRODUCT_PACKAGES += \
