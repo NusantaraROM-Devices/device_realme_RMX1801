@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_RMX1801.mk
+    $(LOCAL_DIR)/nad_RMX1801.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_RMX1801-user \
-    derp_RMX1801-userdebug \
-    derp_RMX1801-eng
+    nad_RMX1801-user \
+    nad_RMX1801-userdebug \
+    nad_RMX1801-eng

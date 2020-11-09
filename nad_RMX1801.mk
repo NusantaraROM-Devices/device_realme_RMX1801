@@ -18,8 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common DerpFest stuff
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Inherit some common Nusantara stuff
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
 # Inherit from Realme RMX1801
 $(call inherit-product, device/realme/RMX1801/device.mk)
@@ -27,14 +27,12 @@ $(call inherit-product, device/realme/RMX1801/device.mk)
 # Set Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Setup Gapps options
-IS_PHONE := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
 
-PRODUCT_NAME := derp_RMX1801
+# Nusantara Properties
+NAD_BUILD_TYPE := OFFICIAL
+
+PRODUCT_NAME := nad_RMX1801
 PRODUCT_DEVICE := RMX1801
 PRODUCT_MANUFACTURER := OPPO
 PRODUCT_BRAND := oppo
