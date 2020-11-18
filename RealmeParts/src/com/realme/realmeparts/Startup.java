@@ -36,6 +36,9 @@ public class Startup extends BroadcastReceiver {
 
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_OTG_SWITCH, false);
         restore(OTGModeSwitch.getFile(), enabled);
+
+        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_GAME_SWITCH, false);
+        restore(GameModeSwitch.getFile(), enabled);
     }
 
     private void restore(String file, boolean enabled) {
