@@ -45,6 +45,6 @@ TARGET_VENDOR_DEVICE_NAME := RMX1801
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="RMX1801" \
-    PRIVATE_BUILD_DESC="sunfish-user 11 RP1A.201105.002 6869500 release-keys"
+    PRIVATE_BUILD_DESC="coral-user 11 RP1A.201105.002-6869500-release-keys"
 
-BUILD_FINGERPRINT := "google/sunfish/sunfish:11/RP1A.201105.002/6828489:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys"
