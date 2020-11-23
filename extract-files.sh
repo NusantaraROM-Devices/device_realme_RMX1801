@@ -77,6 +77,11 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}
         "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml" \
         "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml"
 
-"${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/lib64/libdpmframework.so"
+"${sed}" -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/init/dpmd.rc"
+"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml"
+"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/dpmapi.xml"
+"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/telephonyservice.xml"
+"${sed}" -i 's|/product/framework/qcrilhook.jar|/system_ext/framework/qcrilhook.jar|g' "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/qcrilhook.xml"
+"${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/lib64/libdpmframework.so"
 
 "${MY_DIR}/setup-makefiles.sh"
