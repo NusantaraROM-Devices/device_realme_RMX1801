@@ -8,9 +8,9 @@
   },
   {
     "remote": "ghpriv",
-    "repository": "NusantaraROM-Devices/proprietary_vendor_realme",
+    "repository": "NusantaraROM-Devices/vendor_realme_RMX1801",
     "target_path": "vendor/realme",
-    "branch": "ten",
+    "branch": "10",
     "clone-depth": "1"
   },
   {
