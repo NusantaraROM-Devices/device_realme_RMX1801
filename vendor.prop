@@ -86,7 +86,7 @@ vidc.enc.dcvs.extra-buff-count=2
 
 # CNE/ DPM
 persist.vendor.cne.feature=1
-persist.vendor.dpm.feature=0
+persist.vendor.dpm.feature=1
 
 # Codec2 switch
 debug.media.codec2=2
@@ -155,3 +155,8 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 
 # Time-Service
 persist.vendor.delta_time.enable=true
+
+# Zram-writeback
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
