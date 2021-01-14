@@ -126,6 +126,10 @@ vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
+# Bluetooth (aptX) - from blueline-user 11-RQ1D.210105.003 7005430 release-keys
+system_ext/lib64/libaptX_encoder.so
+system_ext/lib64/libaptXHD_encoder.so
+
 # Camera
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libbase64.so
