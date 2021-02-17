@@ -1,3 +1,4 @@
+android.frameworks.fingerprintservice::IFingerprintHalService                u:object_r:hal_fingerprint_oppo_hwservice:s0
 android.OPPO.IOppoAlgoDaemon                                                 u:object_r:oppoalgo_daemon_hwservice:s0
 vendor.lineage.touch::ITouchscreenGesture                                    u:object_r:hal_lineage_touch_hwservice:s0
 vendor.oppo.hardware.biometrics.fingerprint::IBiometricsFingerprint          u:object_r:hal_fingerprint_hwservice:s0
@@ -7,3 +8,5 @@ vendor.oppo.hardware.cryptoeng::ICryptoeng                                   u:o
 vendor.oppo.hardware.hypnus::IHypnusUtil                                     u:object_r:hal_hypnus_hwservice:s0
 vendor.oppo.hardware.ktv::IKtv                                               u:object_r:hal_ktv_hwservice:s0
 vendor.oppo.hardware.mmdisplayfeature::IMMDisplayFeature                     u:object_r:hal_omdisplay_hwservice:s0
+vendor.oppo.hardware.radio.opporadio::IOppoRadio                             u:object_r:hal_telephony_hwservice:s0
+vendor.oppo.hardware.radio.oppoappradio::IOppoAppRadio                       u:object_r:hal_telephony_hwservice:s0

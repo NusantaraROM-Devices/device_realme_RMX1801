@@ -23,3 +23,8 @@ allow system_app sysfs_switch:dir search;
 allow system_app sysfs_switch:file rw_file_perms;
 
 binder_call(system_app, wificond)
+
+dontaudit system_app {
+  apex_service
+  system_suspend_control_service
+}:service_manager find;
