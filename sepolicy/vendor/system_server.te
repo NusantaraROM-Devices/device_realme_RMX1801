@@ -12,3 +12,5 @@ allow system_server sysfs_livedisplay_tuneable:file { read write };
 
 # Vibrator
 allow system_server sysfs_vibrator:file { r_file_perms };
+
+dontaudit system_server vendor_file:file rw_file_perms;
