@@ -398,9 +398,9 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl:64 \
     android.hardware.vibrator@1.0-service
 
-# VNDK-SP
+# VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp
+    vndk_package
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libcutils-v29.so
