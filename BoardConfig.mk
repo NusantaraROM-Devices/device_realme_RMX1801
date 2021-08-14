@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := realme
-
 DEVICE_PATH := device/realme/RMX1801
 
 # Arch
@@ -130,15 +128,14 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# Keystore
-TARGET_PROVIDES_KEYMASTER := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
