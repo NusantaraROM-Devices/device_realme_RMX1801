@@ -21,6 +21,14 @@ set -e
 DEVICE=RMX1801
 VENDOR=realme
 
+OS=`uname`
+# Use gsed on macOS environment
+if [ "$OS" = 'Darwin' ]; then
+    sed=gsed
+else
+    sed=sed
+fi
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -65,7 +73,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
 # Fix proprietary blobs
-sed -i 's/xml version="2.0"/xml version="1.0"/g' \
+"${sed}" -i 's/xml version="2.0"/xml version="1.0"/g' \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml" \
         "${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml"
 
