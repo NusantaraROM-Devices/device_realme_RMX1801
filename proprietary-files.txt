@@ -2888,6 +2888,12 @@ vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 vendor/firmware/a540_gpmu.fw2
 
+# Health
+lib64/android.hardware.health@1.0.so:vendor/lib64/android.hardware.health@1.0.so
+lib64/android.hardware.health@2.0.so:vendor/lib64/android.hardware.health@2.0.so
+vendor/bin/hw/android.hardware.health@2.0-service
+vendor/etc/init/android.hardware.health@2.0-service.rc
+
 # Hypnus
 vendor/bin/hw/vendor.oppo.hardware.hypnus@1.0-service
 vendor/etc/init/vendor.oppo.hardware.hypnus@1.0-service.rc
