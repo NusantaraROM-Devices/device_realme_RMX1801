@@ -10,14 +10,7 @@
     "remote": "ghpriv",
     "repository": "NusantaraROM-Devices/vendor_realme_RMX1801",
     "target_path": "vendor/realme",
-    "branch": "10",
-    "clone-depth": "1"
-  },
-  {
-    "remote": "priv",
-    "repository": "android_packages_apps_NusantaraPapers",
-    "target_path": "packages/apps/NusantaraPapers",
-    "branch": "10",
+    "branch": "11",
     "clone-depth": "1"
   }
 ]
