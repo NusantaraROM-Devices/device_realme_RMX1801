@@ -85,6 +85,9 @@ function blob_fixup() {
     system_ext/lib64/libdpmframework.so)
         "${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.health@2.0-service|vendor/bin/hw/android.hardware.health@2.0-service.oppo)
+        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v29.so" "${2}"
+        ;;
     esac
 }
 
