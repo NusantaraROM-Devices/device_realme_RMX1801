@@ -67,21 +67,30 @@ if [ -z "${SRC}" ]; then
     SRC=adb
 fi
 
+# Fix proprietary blobs
+function blob_fixup() {
+    case "${1}" in
+    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+        "${sed}" -i 's/xml version="2.0"/xml version="1.0"/g' "${2}"
+        ;;
+    system_ext/etc/init/dpmd.rc)
+        "${sed}" -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
+        ;;
+    system_ext/etc/permissions/com.qti.dpmframework.xml|system_ext/etc/permissions/dpmapi.xml|system_ext/etc/permissions/telephonyservice.xml)
+        "${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
+        ;;
+    system_ext/etc/permissions/qcrilhook.xml)
+        "${sed}" -i 's|/product/framework/qcrilhook.jar|/system_ext/framework/qcrilhook.jar|g' "${2}"
+        ;;
+    system_ext/lib64/libdpmframework.so)
+        "${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
-
-# Fix proprietary blobs
-"${sed}" -i 's/xml version="2.0"/xml version="1.0"/g' \
-        "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml" \
-        "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml"
-
-"${sed}" -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/init/dpmd.rc"
-"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml"
-"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/dpmapi.xml"
-"${sed}" -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/telephonyservice.xml"
-"${sed}" -i 's|/product/framework/qcrilhook.jar|/system_ext/framework/qcrilhook.jar|g' "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/etc/permissions/qcrilhook.xml"
-"${sed}" -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${ANDROID_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/system_ext/lib64/libdpmframework.so"
 
 "${MY_DIR}/setup-makefiles.sh"
