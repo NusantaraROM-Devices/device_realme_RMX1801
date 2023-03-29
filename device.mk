@@ -184,7 +184,6 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter \
     libhwc2onfbadapter \
     libqdMetaData.system \
-    libtinyxml \
     libvulkan \
     memtrack.sdm660 \
     vendor.display.config@2.0 \
